@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router';
+import Home from '../../../pages/Home';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -13,7 +14,9 @@ function ScrollToTop() {
 export function MainRouter() {
   return (
     <BrowserRouter>
-      <Routes></Routes>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
       <ScrollToTop />
     </BrowserRouter>
   );

@@ -1,5 +1,5 @@
 import { MessagesContainer } from './components/MessagesContainer';
-import { MainRouter } from './components/routers/MainRouter';
+import { MainRouter } from './routers/MainRouter';
 
 function App() {
   return (

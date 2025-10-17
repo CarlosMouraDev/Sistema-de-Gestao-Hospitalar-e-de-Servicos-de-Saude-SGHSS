@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router';
 import Login from '../../pages/Login';
 import Doctor from '../../pages/Doctor';
 import Patient from '../../pages/Patient';
+import Header from '../../components/Header';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -17,6 +18,7 @@ function ScrollToTop() {
 export function MainRouter() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />

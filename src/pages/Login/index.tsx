@@ -20,9 +20,9 @@ function Login() {
     if (usuario === 'admin' && senha === '123') {
       navigate('/admin');
     } else if (usuario === 'medico' && senha === '123') {
-      navigate('/medico');
+      navigate('/doctor');
     } else if (usuario === 'paciente' && senha === '123') {
-      navigate('/paciente');
+      navigate('/patient');
     } else {
       setErro('Usuário ou senha incorretos.');
     }

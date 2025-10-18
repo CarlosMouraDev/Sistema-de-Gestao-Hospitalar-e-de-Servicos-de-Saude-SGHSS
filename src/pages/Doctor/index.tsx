@@ -31,6 +31,30 @@ export default function Doctor() {
       symptoms: 'Manchas vermelhas na pele e coceira',
       status: 'PENDING',
     },
+    {
+      id: 3,
+      patient: 'João Pedro',
+      symptoms: 'Manchas vermelhas na pele e coceira',
+      status: 'PENDING',
+    },
+    {
+      id: 3,
+      patient: 'João Pedro',
+      symptoms: 'Manchas vermelhas na pele e coceira',
+      status: 'PENDING',
+    },
+    {
+      id: 3,
+      patient: 'João Pedro',
+      symptoms: 'Manchas vermelhas na pele e coceira',
+      status: 'PENDING',
+    },
+    {
+      id: 3,
+      patient: 'João Pedro',
+      symptoms: 'Manchas vermelhas na pele e coceira',
+      status: 'PENDING',
+    },
   ]);
 
   const handleFieldChange = (
@@ -62,7 +86,7 @@ export default function Doctor() {
               <strong>Paciente:</strong> {a.patient}
             </p>
             <p>
-              <strong>Sintoma:</strong> {a.symptoms}
+              <strong>Sintomas:</strong> {a.symptoms}
             </p>
 
             {a.status === 'PENDING' ? (

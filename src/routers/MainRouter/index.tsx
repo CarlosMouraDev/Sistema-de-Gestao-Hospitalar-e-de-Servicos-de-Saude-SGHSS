@@ -19,6 +19,7 @@ export function MainRouter() {
   return (
     <BrowserRouter>
       <Header />
+      <div className='pt-20'></div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />

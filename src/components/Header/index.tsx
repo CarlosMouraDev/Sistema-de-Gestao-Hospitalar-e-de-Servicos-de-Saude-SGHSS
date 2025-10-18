@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <nav className='border-b border-gray-300 flex items-center justify-between'>
+    <nav className='border-b border-gray-300 flex items-center justify-between fixed w-full bg-white'>
       <a href='/' className=''>
         <img
           src='/images/sus-logo-01.png'

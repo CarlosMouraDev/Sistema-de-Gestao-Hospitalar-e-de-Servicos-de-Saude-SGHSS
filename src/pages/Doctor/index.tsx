@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../components/Button';
 import InputText from '../../components/InputText';
 
@@ -12,6 +12,10 @@ interface Appointment {
 }
 
 export default function Doctor() {
+  useEffect(() => {
+    document.title = 'Sistema De Saúde | Médico';
+  }, []);
+
   const [appointments, setAppointments] = useState<Appointment[]>([
     {
       id: 1,

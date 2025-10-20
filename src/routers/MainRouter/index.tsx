@@ -1,10 +1,11 @@
-import { Home } from 'lucide-react';
 import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router';
 import Login from '../../pages/Login';
 import Doctor from '../../pages/Doctor';
 import Patient from '../../pages/Patient';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Home from '../../pages/Home';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -26,6 +27,7 @@ export function MainRouter() {
         <Route path='/doctor' element={<Doctor />} />
         <Route path='/patient' element={<Patient />} />
       </Routes>
+      <Footer />
       <ScrollToTop />
     </BrowserRouter>
   );

@@ -20,14 +20,17 @@ export function MainRouter() {
   return (
     <BrowserRouter>
       <Header />
-      <div className='pt-20'></div>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/doctor' element={<Doctor />} />
-        <Route path='/patient' element={<Patient />} />
-      </Routes>
-      <Footer />
+      <div className='pt-20 flex flex-col min-h-screen'>
+        <main className='flex-1'>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/doctor' element={<Doctor />} />
+            <Route path='/patient' element={<Patient />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
       <ScrollToTop />
     </BrowserRouter>
   );

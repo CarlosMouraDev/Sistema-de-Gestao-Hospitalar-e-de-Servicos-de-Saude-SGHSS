@@ -10,7 +10,7 @@ export default function Header() {
       </a>
       <a
         href='/login'
-        className='mr-9 pl-4 pr-4 pt-1 pb-1 rounded-2xl border-cyan-800 border-2 bg-blue-900 text-white'
+        className='mr-9 pl-4 pr-4 pt-1 pb-1 rounded-xl bg-blue-700 text-white'
       >
         <p>Login</p>
       </a>

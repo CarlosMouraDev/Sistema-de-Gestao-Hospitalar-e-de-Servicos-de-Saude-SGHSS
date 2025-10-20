@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Button from '../../components/Button';
+import { toast } from 'react-toastify';
 
 interface Appointment {
   id: number;
@@ -20,7 +21,7 @@ export default function Patient() {
       id: 1,
       doctor: 'Dr. Jhon',
       symptoms:
-        ' febre alta repentina, dor de cabeça, dor no corpo e atrás dos olhos, mal-estar, falta de apetite, náuseas, vômitos e manchas vermelhas na pele',
+        ' Febre alta repentina, dor de cabeça, dor no corpo e atrás dos olhos, mal-estar, falta de apetite, náuseas, vômitos e manchas vermelhas na pele',
       status: 'CONSULTED',
       diagnosis: 'Dengue',
       recommendation: 'Se hidratar bem e tomar os medicamentos prescritos.',
@@ -30,7 +31,11 @@ export default function Patient() {
   const [doctor, setDoctor] = useState('');
 
   const createAppointment = () => {
-    if (!symptoms || !doctor) return;
+    if (!symptoms || !doctor) {
+      toast.dismiss();
+      toast.error('Preencha todos os campos.');
+      return;
+    }
     const newAppointment: Appointment = {
       id: Date.now(),
       doctor,
@@ -40,6 +45,7 @@ export default function Patient() {
     setAppointments([...appointments, newAppointment]);
     setSymptoms('');
     setDoctor('');
+    toast.success('Consulta enviada com sucesso!');
   };
 
   return (
@@ -84,7 +90,7 @@ export default function Patient() {
             </p>
             <p>
               <strong>Situação:</strong>{' '}
-              {a.status === 'PENDING' ? 'pendente' : 'consultado'}
+              {a.status === 'PENDING' ? 'Pendente' : 'Consultado'}
             </p>
             {a.status === 'CONSULTED' && (
               <>

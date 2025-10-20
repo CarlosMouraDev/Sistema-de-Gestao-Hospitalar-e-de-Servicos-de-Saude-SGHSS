@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Button from '../../components/Button';
 import InputText from '../../components/InputText';
+import { toast } from 'react-toastify';
 
 interface Appointment {
   id: number;
@@ -35,30 +36,6 @@ export default function Doctor() {
       symptoms: 'Manchas vermelhas na pele e coceira',
       status: 'PENDING',
     },
-    {
-      id: 3,
-      patient: 'João Pedro',
-      symptoms: 'Manchas vermelhas na pele e coceira',
-      status: 'PENDING',
-    },
-    {
-      id: 3,
-      patient: 'João Pedro',
-      symptoms: 'Manchas vermelhas na pele e coceira',
-      status: 'PENDING',
-    },
-    {
-      id: 3,
-      patient: 'João Pedro',
-      symptoms: 'Manchas vermelhas na pele e coceira',
-      status: 'PENDING',
-    },
-    {
-      id: 3,
-      patient: 'João Pedro',
-      symptoms: 'Manchas vermelhas na pele e coceira',
-      status: 'PENDING',
-    },
   ]);
 
   const handleFieldChange = (
@@ -72,9 +49,22 @@ export default function Doctor() {
   };
 
   const handleConsult = (id: number) => {
+    const appointment = appointments.find(a => a.id === id);
+
+    if (
+      !appointment?.diagnosis?.trim() ||
+      !appointment?.recommendation?.trim()
+    ) {
+      toast.dismiss();
+      toast.error('Preencha todos os campos.');
+      return;
+    }
+
     setAppointments(prev =>
       prev.map(a => (a.id === id ? { ...a, status: 'CONSULTED' } : a)),
     );
+
+    toast.success('Consulta enviada com sucesso!');
   };
 
   return (

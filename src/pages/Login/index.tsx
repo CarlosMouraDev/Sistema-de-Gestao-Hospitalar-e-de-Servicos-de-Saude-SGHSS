@@ -17,9 +17,7 @@ function Login() {
   const handleLogin = (e: any) => {
     e.preventDefault();
 
-    if (usuario === 'admin' && senha === '123') {
-      navigate('/admin');
-    } else if (usuario === 'medico' && senha === '123') {
+    if (usuario === 'medico' && senha === '123') {
       navigate('/doctor');
     } else if (usuario === 'paciente' && senha === '123') {
       navigate('/patient');
